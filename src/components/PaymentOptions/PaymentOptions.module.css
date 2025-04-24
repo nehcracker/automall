@@ -1,0 +1,104 @@
+/* components/PaymentOptions/PaymentOptions.module.css */
+.paymentOptions {
+    padding: 80px 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .paymentColumns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .paymentColumn {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .paymentColumn h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #0056b3;
+  }
+  
+  .benefitsList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .benefitsList li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+  }
+  
+  .benefitsList li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+  }
+  
+  .ctaButtons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .ctaPrimary {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .ctaPrimary:hover {
+    background-color: #004494;
+  }
+  
+  .ctaSecondary {
+    background-color: transparent;
+    color: #0056b3;
+    padding: 12px 30px;
+    border: 2px solid #0056b3;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .ctaSecondary:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    .ctaButtons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .ctaPrimary, .ctaSecondary {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  

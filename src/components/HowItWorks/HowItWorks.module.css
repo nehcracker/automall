@@ -1,0 +1,83 @@
+/* components/HowItWorks/HowItWorks.module.css */
+.howItWorks {
+    padding: 80px 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .stepsTimeline {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    position: relative;
+  }
+  
+  .stepsTimeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 4px;
+    background-color: #0056b3;
+  }
+  
+  .step {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .stepNumber {
+    background-color: #0056b3;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .stepContent {
+    padding-left: 30px;
+  }
+  
+  .stepContent h3 {
+    margin-top: 0;
+    color: #0056b3;
+  }
+  
+  .ctaPrimary {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .ctaPrimary:hover {
+    background-color: #004494;
+  }
+  
+  @media (max-width: 768px) {
+    .stepsTimeline:before {
+      left: 20px;
+    }
+  }
+  
