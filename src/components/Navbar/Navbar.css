@@ -1,0 +1,202 @@
+/* src/components/Navbar/Navbar.css */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0.75rem 0;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+  }
+  
+  /* Logo styling - centered on all devices */
+  .nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+  
+  .nav-logo img {
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  /* Menu items */
+  .nav-menu {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .left-menu {
+    margin-right: auto;
+  }
+  
+  .right-menu {
+    margin-left: auto;
+  }
+  
+  .nav-item {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item:hover:not(.disabled) {
+    color: #007BFF;
+  }
+  
+  .disabled {
+    color: #aaa;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  /* Hamburger menu button - hidden on desktop */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 20;
+  }
+  
+  .hamburger {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger::before {
+    transform: translateY(-8px);
+  }
+  
+  .hamburger::after {
+    transform: translateY(8px);
+  }
+  
+  /* Hamburger animation when active */
+  .hamburger.active {
+    background-color: transparent;
+  }
+  
+  .hamburger.active::before {
+    transform: rotate(45deg);
+  }
+  
+  .hamburger.active::after {
+    transform: rotate(-45deg);
+  }
+  
+  /* Tablet and mobile styles */
+  @media screen and (max-width: 992px) {
+    .nav-logo img {
+      height: 45px;
+    }
+    
+    .nav-item {
+      font-size: 0.9rem;
+    }
+    
+    .nav-menu {
+      gap: 1rem;
+    }
+  }
+  
+  /* Mobile styles */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      padding: 0.5rem 0;
+    }
+    
+    .navbar-container {
+      padding: 0.5rem 1rem;
+    }
+    
+    .menu-toggle {
+      display: block;
+    }
+    
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      flex-direction: column;
+      background-color: white;
+      width: 100%;
+      height: auto;
+      padding: 80px 0 20px;
+      z-index: 5;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      gap: 0;
+      left: 0;
+    }
+    
+    .nav-menu.open {
+      transform: translateY(0);
+    }
+    
+    .nav-item {
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .nav-logo {
+      position: relative;
+      left: 0;
+      transform: none;
+      margin: 0 auto;
+    }
+    
+    .nav-logo img {
+      height: 40px;
+    }
+    
+    /* Make both menus appear in the same mobile menu, one after another */
+    .left-menu {
+      margin-right: 0;
+    }
+    
+    .right-menu {
+      margin-left: 0;
+      margin-top: -0.5rem; /* Remove gap between left and right menu in mobile view */
+    }
+  }
+  
+  /* Small mobile devices */
+  @media screen and (max-width: 480px) {
+    .nav-logo img {
+      height: 35px;
+    }
+  }
+  

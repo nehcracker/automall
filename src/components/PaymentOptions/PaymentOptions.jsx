@@ -10,9 +10,9 @@ function PaymentOptions() {
         
         <div className={styles.paymentColumns}>
           <div className={styles.paymentColumn}>
-            <h3>Hire-Purchase</h3>
+            <h3>Hire-Purchase - 30%</h3>
             <ul className={styles.benefitsList}>
-              <li>Low upfront deposit</li>
+              <li>Low upfront deposit of 30%</li>
               <li>Fast-track approval</li>
               <li>Easy monthly payments</li>
               <li>Zero collateral</li>

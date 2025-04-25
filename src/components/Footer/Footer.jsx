@@ -7,21 +7,17 @@ function Footer() {
     <footer className={styles.siteFooter}>
       <div className={styles.container}>
         <div className={styles.footerLinks}>
-          <a href="#">About Auto Mall Drivethru</a>
-          <a href="#">Browse Inventory</a>
-          <a href="#">Financing Options</a>
-          <a href="#">FAQs</a>
-          <a href="#">Contact Us</a>
+          <a href="www.automallkenya.com">About Auto Mall Drivethru</a>
+          <a href="www.automallkenya.com">Browse Inventory</a>
+          <a href="www.automallkenya.com">Financing Options</a>
+          <a href="www.automallkenya.com">Contact Us</a>
         </div>
         
         <div className={styles.socialIcons}>
-          <a href="#" aria-label="Facebook">
+          <a href="https://www.facebook.com/automallkenya/" aria-label="Facebook">
             <span className={styles.socialIcon}>📘</span>
           </a>
-          <a href="#" aria-label="Instagram">
-            <span className={styles.socialIcon}>📸</span>
-          </a>
-          <a href="#" aria-label="WhatsApp">
+          <a href="https://wa.me/254758947924" aria-label="WhatsApp">
             <span className={styles.socialIcon}>📱</span>
           </a>
         </div>

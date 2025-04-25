@@ -1,73 +1,118 @@
-// components/ContactSection/ContactSection.jsx
-import React from 'react';
+// ContactSection.jsx
+import { useState } from 'react';
+import { FaWhatsapp, FaFacebook, FaPhone, FaEnvelope } from 'react-icons/fa';
 import styles from './ContactSection.module.css';
 
 function ContactSection() {
+  const [mapLoaded, setMapLoaded] = useState(false);
+  
   return (
-    <section className={styles.contactSection}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>Let's Help You Own Your Next Mercedes-Benz</h2>
-        
-        <div className={styles.contactLayout}>
-          <div className={styles.contactInfo}>
-            <div className={styles.contactItem}>
-              <span className={styles.contactIcon}>📞</span>
-              <p>Call Us: [Your Phone Number]</p>
-            </div>
-            
-            <div className={styles.contactItem}>
-              <span className={styles.contactIcon}>📧</span>
-              <p>Email: [Your Email Address]</p>
-            </div>
-            
-            <div className={styles.contactItem}>
-              <span className={styles.contactIcon}>📍</span>
-              <p>Visit Our Yard: [Your Address]</p>
-            </div>
-            
-            <div className={styles.contactItem}>
-              <span className={styles.contactIcon}>💬</span>
-              <p>WhatsApp Available</p>
-            </div>
+    <section className={styles.container}>
+      <h2 className={styles.title}>Let's Help You Own Your Next Mercedes-Benz</h2>
+      
+      <div className={styles.contentWrapper}>
+        {/* Map container */}
+        <div className={styles.mapContainer}>
+          <div className={styles.loadingOverlay} style={{ display: mapLoaded ? 'none' : 'flex' }}>
+            <span>Loading map...</span>
           </div>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254715.3743449602!2d39.50145010316051!3d-4.035172110722726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184012e78ec02c7d%3A0xcb618bbc35d0db5a!2sMombasa!5e0!3m2!1sen!2ske!4v1745526501408!5m2!1sen!2ske"
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            onLoad={() => setMapLoaded(true)}
+            title="Auto Mall Drivethru Location"
+          ></iframe>
+        </div>
+
+        {/* Contact info */}
+        <div className={styles.contactInfo}>
+          <h3 className={styles.contactTitle}>Contact Us</h3>
           
-          <form className={styles.contactForm}>
-            <div className={styles.formGroup}>
-              <label htmlFor="fullName">Full Name</label>
-              <input type="text" id="fullName" name="fullName" required />
-            </div>
+          <div className={styles.contactGrid}>
+            {/* Phone */}
+            <a 
+              href="tel:+254736033581" 
+              className={styles.contactItem}
+              aria-label="Call us"
+            >
+              <div className={`${styles.contactIcon} ${styles.phoneIcon}`}>
+                <FaPhone />
+              </div>
+              <div className={styles.contactText}>
+                <h4>Call Us</h4>
+                <p>+254 736 033 581</p>
+              </div>
+            </a>
             
-            <div className={styles.formGroup}>
-              <label htmlFor="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" required />
-            </div>
+            {/* WhatsApp */}
+            <a 
+              href="https://wa.me/254758947924" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.contactItem}
+              aria-label="Contact us on WhatsApp"
+            >
+              <div className={`${styles.contactIcon} ${styles.whatsappIcon}`}>
+                <FaWhatsapp />
+              </div>
+              <div className={styles.contactText}>
+                <h4>WhatsApp</h4>
+                <p>+254 758 947 924</p>
+              </div>
+            </a>
             
-            <div className={styles.formGroup}>
-              <label htmlFor="vehicleType">Vehicle Type</label>
-              <select id="vehicleType" name="vehicleType" required>
-                <option value="">Select Vehicle Type</option>
-                <option value="actros">Mercedes-Benz Actros Truck</option>
-                <option value="van">Public Transport Van</option>
-                <option value="ambulance">Ambulance</option>
-              </select>
-            </div>
+            {/* Email */}
+            <a 
+              href="mailto:sales@automallkenya.com" 
+              className={styles.contactItem}
+              aria-label="Email us"
+            >
+              <div className={`${styles.contactIcon} ${styles.emailIcon}`}>
+                <FaEnvelope />
+              </div>
+              <div className={styles.contactText}>
+                <h4>Email Us</h4>
+                <p>sales@automallkenya.com</p>
+              </div>
+            </a>
             
-            <div className={styles.formGroup}>
-              <label htmlFor="paymentMethod">Payment Method</label>
-              <select id="paymentMethod" name="paymentMethod" required>
-                <option value="">Select Payment Method</option>
-                <option value="hirePurchase">Hire-Purchase</option>
-                <option value="cash">Cash Purchase</option>
-              </select>
-            </div>
+            {/* Facebook */}
+            <a 
+              href="https://www.facebook.com/automallkenya/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.contactItem}
+              aria-label="Visit our Facebook page"
+            >
+              <div className={`${styles.contactIcon} ${styles.facebookIcon}`}>
+                <FaFacebook />
+              </div>
+              <div className={styles.contactText}>
+                <h4>Facebook</h4>
+                <p>Follow us for updates</p>
+              </div>
+            </a>
             
-            <div className={styles.formGroup}>
-              <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" rows="4"></textarea>
+
+           
+            {/* Visit Us */}
+            {/* Uncomment if you want to show the location icon
+            <div className={styles.contactItem}>
+              <div className={`${styles.contactIcon} ${styles.locationIcon}`}>
+                <FaMapMarkerAlt />
+              </div>
+              <div className={styles.contactText}>
+                <h4>Visit Our Yard</h4>
+                <p>Auto Mall Kenya, Nairobi</p>
+              </div>
             </div>
-            
-            <button type="submit" className={styles.ctaPrimary}>Send Enquiry</button>
-          </form>
+            */}
+          </div>
         </div>
       </div>
     </section>
