@@ -16,7 +16,7 @@ function App() {
   return (
     <HelmetProvider>
     <Helmet>
-        <title>Auto Mall Kenya | Premium Used Cars in Mombasa | Hire-Purchase terms</title>
+        <title>Auto Mall Kenya | Used Trucks & Cars in Mombasa | Hire-Purchase terms</title>
         <meta name="description" content="Auto Mall KenyaFresh Import Mercedes-Benz Actros Trucks, Public Transport Vans & Fully Equipped Ambulances – Available on Low Deposit Hire-Purchase or Full Cash Purchase." />
         <meta name="keywords" content="used cars, Hire-purchase, car loans, low deposit cars, car for sale, Mercedes-benz Actros, pre-owned vehicles, car financing, auto mall, Mombasa Kenya" />
         <link rel="canonical" href="https://automallkenya.com" />
