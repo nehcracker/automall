@@ -27,7 +27,9 @@ const Navbar = () => {
 
         {/* Center logo - always centered on all devices */}
         <div className="nav-logo">
-        <img src="/Logo.png" alt="Logo" />
+        <a href="/">
+          <img src="/Logo.png" alt="Logo" />
+        </a>
         </div>
         
         {/* Right side menu items */}

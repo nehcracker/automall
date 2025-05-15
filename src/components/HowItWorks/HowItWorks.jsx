@@ -10,14 +10,8 @@ function HowItWorks() {
 
     // Prepare structured questions in a pre-filled message
     const structuredQuestions = encodeURIComponent(
-      "Hello Auto mall Kenya!\n\n" +
-      "I'm interested in applying for Hire-purchase. Here's some information about my requirements:\n" +
-      "1. How much deposit do you have available?\n" +
-      "2. When are you looking to make the purchase?\n" +
-      "3. Is this your first truck/vehicle purchase?\n" +
-      "4. What type of vehicle are you interested in? (Actros Truck/ Transport Van/Ambulance)\n" +
-      "What will you be using the vehicle for?"
-    );
+    "Hi, I'm interested in hire-purchase options."
+  );
 
     const whatsAppUrl = `https://wa.me/${whatsAppNumber}?text=${structuredQuestions}`;
     window.open(whatsAppUrl, '_blank');
