@@ -25,6 +25,24 @@ const SocialSidebar = () => {
     };
   }, []);
 
+  const trackWhatsAppClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'whatsapp_click', {
+        'event_category': 'engagement',
+        'event_label': 'WhatsApp Sidebar Button'
+      });
+    }
+  };
+
+  const trackPhoneCall = () => {
+    if (window.gtag) {
+      window.gtag('event', 'phone_call', {
+        'event_category': 'engagement',
+        'event_label': 'Phone Sidebar Button'
+      });
+    }
+  };
+
   return (
     <div className={`social-sidebar ${visible ? 'visible' : ''}`}>
       <a 
@@ -33,6 +51,7 @@ const SocialSidebar = () => {
         rel="noopener noreferrer" 
         className="social-icon whatsapp"
         aria-label="Contact us on WhatsApp"
+        onClick={trackWhatsAppClick}
       >
         <FaWhatsapp />
         <span className="tooltip">WhatsApp: +254 758 947 924</span>
@@ -53,6 +72,7 @@ const SocialSidebar = () => {
         href="tel:+254736033581" 
         className="social-icon phone"
         aria-label="Call us"
+        onClick={trackPhoneCall}
       >
         <FaPhone />
         <span className="tooltip">Call: +254 736 033 581</span>

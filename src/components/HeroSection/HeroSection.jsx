@@ -16,7 +16,24 @@ function HeroSection() {
   const whatsAppUrl = `https://api.whatsapp.com/send?phone=${whatsAppNumber}&text=${structuredQuestions}`;
   
   const handleWhatsAppRedirect = () => {
+    // Google Analytics event tracking for WhatsApp
+    if (window.gtag) {
+      window.gtag('event', 'whatsapp_click', {
+        'event_category': 'engagement',
+        'event_label': 'WhatsApp Hero Button'
+      });
+    }
     window.open(whatsAppUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handlePhoneCall = () => {
+    // Google Analytics event tracking for phone calls
+    if (window.gtag) {
+      window.gtag('event', 'phone_call', {
+        'event_category': 'engagement',
+        'event_label': 'Phone Call Hero Button'
+      });
+    }
   };
 
   return (
@@ -38,6 +55,7 @@ function HeroSection() {
           <a 
             href="tel:+254736033581" 
             className={styles.ctaSecondary}
+            onClick={handlePhoneCall}
           >
             Call Us Now
           </a>

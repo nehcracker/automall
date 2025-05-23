@@ -10,8 +10,16 @@ function HowItWorks() {
 
     // Prepare structured questions in a pre-filled message
     const structuredQuestions = encodeURIComponent(
-    "Hi, I'm interested in hire-purchase options."
-  );
+      "Hi, I'm interested in hire-purchase options."
+    );
+
+    // Google Analytics event tracking for WhatsApp
+    if (window.gtag) {
+      window.gtag('event', 'whatsapp_click', {
+        'event_category': 'engagement',
+        'event_label': 'WhatsApp HowItWorks Button'
+      });
+    }
 
     const whatsAppUrl = `https://wa.me/${whatsAppNumber}?text=${structuredQuestions}`;
     window.open(whatsAppUrl, '_blank');
