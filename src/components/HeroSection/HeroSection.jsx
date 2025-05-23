@@ -40,7 +40,7 @@ function HeroSection() {
     <section className={styles.heroSection}>
       <div className={styles.container}>
         <h1 className={styles.title}>
-          Auto mall Drivethru | Hire purchase | Cash payments
+          Drivethru Auto mall | Trucks on Hire purchase | Cash payments
         </h1>
         <p className={styles.subheadline}>
           Fresh Import Mercedes-Benz Actros Trucks, Public Transport Vans & Fully Equipped Ambulances – Available on Low Deposit Hire-Purchase or Full Cash Purchase.

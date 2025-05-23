@@ -26,20 +26,22 @@ const SocialSidebar = () => {
   }, []);
 
   const trackWhatsAppClick = () => {
-    if (window.gtag) {
+    if (typeof window.gtag === 'function') {
       window.gtag('event', 'whatsapp_click', {
         'event_category': 'engagement',
         'event_label': 'WhatsApp Sidebar Button'
       });
+      console.log('WhatsApp click tracked');
     }
   };
 
   const trackPhoneCall = () => {
-    if (window.gtag) {
+    if (typeof window.gtag === 'function') {
       window.gtag('event', 'phone_call', {
         'event_category': 'engagement',
         'event_label': 'Phone Sidebar Button'
       });
+      console.log('Phone call tracked');
     }
   };
 
